@@ -1,5 +1,5 @@
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-    const newParams = await params;
-  const { id } = await newParams;
-  return <div>Topic Page: {id}</div>;
+import React from 'react';
+
+export default function Page({params}: { params: { id: string } }) {
+    return <div className="">Topics Page: {params.id}</div>
 }
