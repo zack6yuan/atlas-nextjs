@@ -2,12 +2,9 @@ import { AskQuestion } from "@/components/AskQuestion";
 import { Question } from "@/components/Question";
 import { fetchQuestions, fetchTopic } from "@/lib/data";
 import { HashtagIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function Page({ params, }: { params: Promise<{ id: string }>;}) {
   const { id } = await params;
   const topic = await fetchTopic(id);
   const questions = await fetchQuestions(id);
@@ -23,12 +20,14 @@ export default async function Page({
       </h1>
       <AskQuestion topic={topic.id} />
       {questions.map((question) => (
+        <Link href={`/ui/questions/${question.id}`}>
         <Question
           key={question.id}
           id={question.id}
           text={question.title}
           votes={question.votes}
         />
+        </Link>
       ))}
     </div>
   );
