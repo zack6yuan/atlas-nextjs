@@ -11,12 +11,16 @@ export default async function answerQuestions({ params, }: { params: Promise<{ i
 
   const questions = await fetchQuestions(id);
 
+  if (!topic) {
+    return <div>Topic not found.</div>
+  }
+
   return (
     <div className="">
       <h1 className="text-3xl font-black flex items-center">
         <HashtagIcon className="h-6 w-6 mr-2" /> What is state in React?
       </h1>
-      <GiveAnswer topic={id}/>
+      <GiveAnswer topic={topic.id}/>
       {questions.map((question) => (
         <Question
           key={question.id}
