@@ -106,6 +106,9 @@ async function seedAnswers() {
         "It's a new feature in TypeScript that makes it easier to write type-safe code.",
       question_id: "0b93d8dc-6e43-49e3-b59f-b67531247612",
     },
+    {
+
+    },
   ];
 
   const insertedAnswers = await Promise.all(

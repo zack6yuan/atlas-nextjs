@@ -6,6 +6,11 @@ import { Answer } from "@/components/Answer";
 import { fetchQuestions, fetchTopic, fetchSelectedQuestion } from "@/lib/data";
 import { GiveAnswer } from "@/components/GiveAnswer";
 import { HashtagIcon } from "@heroicons/react/24/outline";
+import { useEffect } from 'react';
+
+interface questionProps {
+  questionTitle: string;
+}
 
 export default async function answerQuestions({ params }: { params: Promise<{ id: string }>;}) {
   const { id } = await params;
@@ -13,6 +18,7 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
   const topic = await fetchTopic(id);
   const questions = await fetchQuestions(id);
   const selectedQuestion = await fetchSelectedQuestion(id);
+  const title = document.getElementById("topic")
 
   return (
     <div className="">
