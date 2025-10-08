@@ -17,6 +17,7 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
       <h1 className="text-3xl font-black flex items-center">
         <HashtagIcon className="h-6 w-6 mr-2" />
       </h1>
+      <p>Answers below are controlled by ui/questions/[id]/page.tsx</p>
       <GiveAnswer topic={id}/>
       {questions.map((question) => (
         <Question

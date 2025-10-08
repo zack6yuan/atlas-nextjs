@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import GitHub from "next-auth/providers/github";
 import { fetchUser } from "./lib/data"
 import bcrypt from "bcryptjs";
 
@@ -30,6 +31,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return null;
     },
   }),
+  GitHub({
+    clientId: process.env.AUTH_GITHUB_ID,
+    clientSecret: process.env.AUTH_GITHUB_SECRET,
+  })
   ],
   callbacks: {
     authorized: async ({ auth }) => {

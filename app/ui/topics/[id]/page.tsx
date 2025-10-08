@@ -25,6 +25,7 @@ export default async function Page({ params, }: { params: Promise<{ id: string }
           <Image src={trash} className="w-7 ml-2 mb-1" alt="trash-icon"></Image>
         </button>
       </h1>
+      <p>Questions below are controlled by ui/topics/[id]/page.tsx</p>
       <AskQuestion topic={topic.id} />
       {questions.map((question) => (
         <Link href={`/ui/questions/${question.id}`}>
