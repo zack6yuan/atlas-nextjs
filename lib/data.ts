@@ -45,7 +45,7 @@ export async function fetchQuestions(id: string) {
 export async function fetchSelectedQuestion(id: string) {
   try {
     const data =
-      await sql<Question>`SELECT * FROM questions WHERE topic_id = ${id} ORDER BY votes DESC`;
+      await sql<Question>`SELECT * FROM questions WHERE topic_id = ${id} ORDER BY votes DESC LIMIT 1`;
     return data.rows[0];
   } catch (error) {
     console.error("Database Error:", error);
