@@ -1,3 +1,4 @@
+// Component that displays the questions for the specific topics
 import { AskQuestion } from "@/components/AskQuestion";
 import { Question } from "@/components/Question";
 import { fetchQuestions, fetchTopic } from "@/lib/data";
