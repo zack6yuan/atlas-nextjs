@@ -3,6 +3,9 @@ import { Question } from "@/components/Question";
 import { fetchQuestions, fetchTopic } from "@/lib/data";
 import { HashtagIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image";
+import trash from "../../../../assets/trash.png";
+
 
 export default async function Page({ params, }: { params: Promise<{ id: string }>;}) {
   const { id } = await params;
@@ -17,6 +20,9 @@ export default async function Page({ params, }: { params: Promise<{ id: string }
     <div>
       <h1 className="text-3xl font-black flex items-center">
         <HashtagIcon className="h-6 w-6 mr-2" /> {topic.title}
+        <button style={{cursor: "pointer"}}>
+          <Image src={trash} className="w-7 ml-2 mb-1" alt="trash-icon"></Image>
+        </button>
       </h1>
       <AskQuestion topic={topic.id} />
       {questions.map((question) => (
