@@ -20,20 +20,20 @@ export default async function Page({ params, }: { params: Promise<{ id: string }
   return (
     <div>
       <h1 className="text-3xl font-black flex items-center">
-        <HashtagIcon className="h-6 w-6 mr-2" /> {topic.title}
+        <HashtagIcon className="h-6 w-6 mr-2" /> { topic.title }
         <button style={{cursor: "pointer"}}>
-          <Image src={trash} className="w-7 ml-2 mb-1" alt="trash-icon"></Image>
+          <Image src={ trash } className="w-7 ml-2 mb-1" alt="trash-icon"></Image>
         </button>
       </h1>
       <p>Questions below are controlled by ui/topics/[id]/page.tsx</p>
-      <AskQuestion topic={topic.id} />
+      <AskQuestion topic={ topic.id } />
       {questions.map((question) => (
-        <Link href={`/ui/questions/${question.id}`}>
+        <Link href={`/ui/questions/${ question.id }`} key={ question.id } >
         <Question
-          key={question.id}
-          id={question.id}
-          text={question.title}
-          votes={question.votes}
+          key={ question.id }
+          id={ question.id }
+          text={ question.title }
+          votes={ question.votes }
         />
         </Link>
       ))}

@@ -17,20 +17,21 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
   return (
     <div className="">
       <h1 className="text-3xl font-black flex items-center">
-        <HashtagIcon className="h-6 w-6 mr-2" /> [ selectedQuestion ]
+        <HashtagIcon className="h-6 w-6 mr-2" />
       </h1>
       <p>Answers below are controlled by ui/questions/[id]/page.tsx</p>
       <GiveAnswer topic={id}/> {/* Answer input field */}
+      <div className="">
       {/* Answers displayed post input*/}
-      {questions.map((answer) => (
+      {questions.map((question) => (
         <Answer
-          key={answer.id}
-          id={answer.id}
-          text={answer.title}
-    
+          key={question.id}
+          id={question.id}
+          text={question.title}
           className=""
         />
       ))}
+      </div>
     </div>
   )
 }
