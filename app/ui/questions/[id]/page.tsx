@@ -21,6 +21,7 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
           key={question.id}
           id={question.id}
           text={question.title}
+          votes={question.votes}
         />
       ))}
     </div>
