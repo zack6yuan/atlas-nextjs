@@ -1,7 +1,7 @@
 import { addQuestion } from "@/lib/actions";
 import React from 'react';
 
-type GiveAnswerProps = {
+interface GiveAnswerProps {
   topic: string;
 }
 
