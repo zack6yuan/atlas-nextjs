@@ -1,7 +1,7 @@
 import { HandThumbUpIcon } from "@heroicons/react/24/outline";
 import { addVote } from "@/lib/actions";
 
-export default function VoteButton({ id }: { id: string }) {
+export default function VoteButton({ id, onClick }: { id: string, onClick: void }) {
   return (
     <form action={addVote}>
       <input type="hidden" name="id" value={id} />

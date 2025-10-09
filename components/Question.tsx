@@ -1,4 +1,5 @@
 import VoteButton from "./VoteButton";
+import { incrementVotes } from '../lib/data'
 
 type QuestionProps = {
   id: string;
@@ -13,7 +14,9 @@ export function Question({ id, text, votes }: QuestionProps) {
         {votes}
       </div>
       <p className="text w-full text-left font-semibold">{text}</p>
-      <VoteButton id={id} />
+      <div className="">
+        <VoteButton id={id} onClick={ incrementVotes }/>
+      </div>
     </div>
   );
 }

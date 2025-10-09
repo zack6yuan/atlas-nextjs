@@ -78,6 +78,18 @@ export async function insertTopic(topic: Pick<Topic, "title">) {
   }
 }
 
+export async function deleteTopic(id: string) {
+  try {
+    const data = 
+      await sql<Topic>`DELETE FROM topics WHERE id = ${id}`;
+    console.log(data.rows[0]);
+    return data.rows[0];
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to remove topic");
+  }
+}
+
 export async function incrementVotes(id: string) {
   try {
     const data =
