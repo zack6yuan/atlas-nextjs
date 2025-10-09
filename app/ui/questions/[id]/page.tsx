@@ -18,7 +18,6 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
   const topic = await fetchTopic(id);
   const questions = await fetchQuestions(id);
   const selectedQuestion = await fetchSelectedQuestion(id);
-  const title = document.getElementById("topic")
 
   return (
     <div className="">
