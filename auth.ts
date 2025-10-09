@@ -32,7 +32,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
   }),
   GitHub({
-    clientId: process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID,
+    clientId: process.env.AUTH_GITHUB_ID,
     clientSecret: process.env.AUTH_GITHUB_SECRET,
   })
   ],
