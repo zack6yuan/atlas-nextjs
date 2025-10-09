@@ -16,24 +16,25 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
   const { id } = await params;
   console.log("fetching:", id)
   const topic = await fetchTopic(id);
-  const questions = await fetchQuestions(id);
+  const answers = await fetchQuestions(id);
   const selectedQuestion = await fetchSelectedQuestion(id);
+
+  console.log(selectedQuestion.id)
 
   return (
     <div className="">
       <h1 className="text-3xl font-black flex items-center">
-        <HashtagIcon className="h-6 w-6 mr-2" />
+        <HashtagIcon className="h-6 w-6 mr-2" /> { selectedQuestion.title }
       </h1>
-      <p>Answers below are controlled by ui/questions/[id]/page.tsx</p>
       <GiveAnswer topic={id}/> {/* Answer input field */}
       <div className="">
       {/* Answers displayed post input*/}
-      {questions.map((question) => (
+      {answers.map((answer) => (
         <Answer
-          key={question.id}
-          id={question.id}
-          text={question.title}
-          className=""
+          key={answer.id}
+          id={answer.id}
+          text={answer.title}
+          className="answers-results"
         />
       ))}
       </div>
