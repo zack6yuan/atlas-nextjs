@@ -3,7 +3,6 @@ import React from 'react';
 
 interface GiveAnswerProps {
   topic: string;
-  onClick: () => void;
 }
 
 export function GiveAnswer({ topic }: GiveAnswerProps) {
