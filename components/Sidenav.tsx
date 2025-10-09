@@ -6,6 +6,7 @@ import SignOutButton from "./SignOutButton";
 import NewTopicButton from "./NewTopicButton";
 import Link from "next/link";
 import CurrentUser from "./CurrentUser";
+import TestUser from "./TestUser";
 
 export default async function SideNav() {
   return (
@@ -17,6 +18,7 @@ export default async function SideNav() {
         <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
         <NewTopicButton />
         <CurrentUser />
+        <TestUser />
         <SignOutButton />
       </div>
     </div>
