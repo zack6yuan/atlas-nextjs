@@ -31,7 +31,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return null;
     },
   }),
-  GitHub({})
+  GitHub
   ],
   callbacks: {
     authorized: async ({ auth }) => {
