@@ -29,11 +29,11 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
       <GiveAnswer topic={id}/> {/* Answer input field */}
       <div className="">
       {/* Answers displayed post input*/}
-      {answers.map((answer) => (
+      {answers.map((answers) => (
         <Answer
-          key={answer.id}
-          id={answer.id}
-          text={answer.title}
+          key={answers.id}
+          id={answers.id}
+          text={answers.title}
           className="answers-results"
         />
       ))}

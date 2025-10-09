@@ -8,8 +8,8 @@ interface GiveAnswerProps {
 export function GiveAnswer({ topic }: GiveAnswerProps) {
   return (
     <div className="">
-    <form className="relative my-8" action={addQuestion}>
-      <input type="hidden" name="topic-id" value={topic}/>
+    <form className="relative my-8" action={ addQuestion }>
+      <input type="hidden" name="topic-id" value={ topic }/>
       <input
         type="text"
         name="title"
