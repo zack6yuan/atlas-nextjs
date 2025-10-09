@@ -15,7 +15,7 @@ export function Question({ id, text, votes }: QuestionProps) {
       </div>
       <p className="text w-full text-left font-semibold">{text}</p>
       <div className="">
-        <VoteButton id={id} onClick={ incrementVotes }/>
+        <VoteButton id={id}/>
       </div>
     </div>
   );

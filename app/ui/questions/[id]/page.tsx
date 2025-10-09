@@ -19,8 +19,6 @@ export default async function answerQuestions({ params }: { params: Promise<{ id
   const answers = await fetchQuestions(id);
   const selectedQuestion = await fetchSelectedQuestion(id);
 
-  console.log(selectedQuestion.id)
-
   return (
     <div className="">
       <h1 className="text-3xl font-black flex items-center">
